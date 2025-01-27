@@ -1,0 +1,91 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.MakeFood {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 30px auto;
+}
+
+/* Heading Styling */
+h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Main Container */
+.Main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Paragraph Styling */
+p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  max-width: 800px;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+/* Full Screen Video Container */
+.iframe-main {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Allows iframes to wrap to the next line if necessary */
+  width: 100%;
+  margin-top: 20px;
+}
+
+.iframe-container {
+  flex: 1;
+  width: 100%; /* Make the iframe container take full width */
+  max-width: 100%; /* Remove max-width to allow for full width on screens */
+  height: 60vh; /* Set iframe height to be responsive based on viewport height */
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+iframe {
+  width: 100%; /* Make the iframe take full width */
+  height: 100%; /* Make the iframe take full height of its container */
+  border: none;
+  border-radius: 10px;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  h1 {
+      font-size: 28px;
+  }
+
+  .Main-container {
+      padding: 10px;
+  }
+
+  p {
+      font-size: 16px;
+      max-width: 90%;
+  }
+
+  iframe {
+      height: 250px;
+  }
+}

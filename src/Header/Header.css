@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 80px; /* Add space to avoid content being hidden under the fixed header */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #4CAF50; /* Green color for health and freshness */
+    color: white;
+    width: 100vw;
+    position: fixed; /* Fixed positioning */
+    top: 0; /* Position it at the top */
+    left: 0; /* Align it to the left */
+    z-index: 1000; /* Ensure it's above other content */
+    flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for visual separation */
+}
+
+/* Logo Styling */
+.logo img {
+    width: 50px; /* Smaller logo */
+    height: 50px; /* Ensure height equals width to form a square */
+    border-radius: 50%; /* Makes the logo circular */
+    object-fit: cover; /* Ensures image fits within the circle */
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* Slightly scale up on hover */
+}
+
+/* Navigation Styling */
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+    color: #f39c12; /* Orange accent for hover */
+}
+
+/* Call-to-Action Button Styling */
+.cta-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #f39c12;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e67e22;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For Mobile (up to 600px) */
+@media only screen and (max-width: 600px) {
+    .header {
+        flex-direction: column; /* Stack the logo, nav, and buttons vertically */
+        align-items: flex-start; /* Align items to the left */
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 50px; /* Smaller logo for mobile */
+        border-radius: 40%;
+    }
+
+    /* Show the hamburger icon on mobile */
+    .hamburger {
+        display: block;
+    }
+
+    .nav ul {
+        display: none; /* Hide nav links initially */
+        flex-direction: column; /* Stack the links vertically */
+        gap: 15px;
+        width: 100%;
+        padding-left: 0;
+        margin-top: 15px;
+    }
+
+    .nav.active ul {
+        display: flex; /* Show nav links when active */
+    }
+
+    .nav ul li a {
+        font-size: 16px;
+    }
+
+    .cta-buttons {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+
+    .cta-button {
+        width: 48%; /* Ensure buttons fit well on smaller screens */
+    }
+}
+
+/* For Tablets (up to 768px) */
+@media only screen and (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stack items for tablet screens */
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .logo img {
+        width: 60px; /* Slightly smaller logo on tablet */
+    }
+
+    .nav ul {
+        gap: 20px;
+    }
+
+    .cta-buttons {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .cta-button {
+        width: 48%;
+    }
+}
+
+/* For Larger Screens (Desktops) */
+@media only screen and (min-width: 1024px) {
+    .header {
+        flex-direction: row; /* Keep items in a row on larger screens */
+        justify-content: space-between;
+    }
+
+    .logo img {
+        width: 70px; /* Keep the logo size for desktops */
+    }
+
+    .nav ul {
+        display: flex;
+    }
+
+    .cta-buttons {
+        justify-content: flex-start; /* Keep buttons aligned to the left */
+    }
+}

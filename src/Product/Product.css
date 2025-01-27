@@ -1,0 +1,108 @@
+/* Product.css */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Centering items vertically */
+    gap: 30px;
+    margin: 20px;
+    min-height: 100vh; /* Ensures the container takes up the full viewport height */
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 50%; /* Circular card */
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    position: relative; /* Positioning the content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transform: scale(1);
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover; /* Ensures image fills the circle */
+    border-radius: 50%; /* Round the image */
+    transition: transform 0.3s ease;
+}
+
+.product-card img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.product-card p {
+    font-size: 16px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
+    padding: 10px 15px;
+    border-radius: 20px;
+    width: 80%;
+    position: absolute;
+    bottom: 70px; /* Positioning text above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-weight: 600;
+}
+
+.product-card button {
+    background-color: #ff5722;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 25px; /* Rounded button */
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-card button:hover {
+    background-color: #f4511e; /* Darker shade on hover */
+    transform: translateX(-50%) scale(1.05); /* Slight zoom effect on hover */
+}
+
+.product-card button:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 250px;
+        height: 250px;
+    }
+
+    .product-card p {
+        font-size: 14px;
+        bottom: 60px;
+    }
+
+    .product-card button {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}

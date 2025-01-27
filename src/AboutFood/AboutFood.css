@@ -1,0 +1,108 @@
+/* Container for each food item */
+.food-item {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center align the content */
+  text-align: left;
+  padding: 20px;
+  margin: 40px 5%; /* Adjusted to have a more dynamic margin */
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Use percentage width to ensure responsiveness */
+  max-width: 100%; /* Ensure the width doesn't exceed the screen width */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: transparent; /* Removed the background */
+}
+
+.food-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.food-image {
+  width: 100%;
+  max-width: 600px; /* Adjust image size for a better layout */
+  height: 400px; /* Set a fixed height to keep images uniform */
+  object-fit: cover; /* Ensure images cover the space without distortion */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(218, 117, 117, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-right: 20px; /* Adjusted margin */
+}
+
+/* Hover effect on images */
+.food-image:hover {
+  transform: scale(1.1); /* Slight zoom-in effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+
+/* Description styling */
+.food-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #444;
+  flex: 1;
+  font-family: 'Arial', sans-serif;
+  font-weight: 500;
+  text-align: justify;
+  margin-left: 20px; /* Space between image and text */
+}
+
+/* Responsive styling */
+@media (max-width: 1200px) {
+  .food-item {
+    padding: 20px 5%;
+  }
+
+  .food-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .food-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .food-image {
+    width: 95%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .food-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .food-item {
+    padding: 20px;
+  }
+
+  .food-image {
+    width: 95%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .food-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .food-item {
+    padding: 15px;
+  }
+
+  .food-description {
+    font-size: 0.9rem;
+  }
+
+  .food-image {
+    width: 100%;
+  }
+}
