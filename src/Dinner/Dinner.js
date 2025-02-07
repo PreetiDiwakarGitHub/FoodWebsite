@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const Lunch = () => {
   const [meal, setMeal] = useState("");
@@ -58,9 +60,10 @@ const Lunch = () => {
         <div className="meals-list">
           {mealsList.map((meal, index) => (
             <div key={index} className="meal-item">
-              <h3>{meal.strMeal}</h3>
               <img src={meal.strMealThumb} alt={meal.strMeal} />
-              <p>{meal.strInstructions}</p>
+
+              {/* Add price */}
+              <p>₹{Math.floor(Math.random() * 100) + 50}</p> {/* Placeholder for price */}
 
               {/* Order button */}
               <button

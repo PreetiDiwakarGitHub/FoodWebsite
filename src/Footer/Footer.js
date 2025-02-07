@@ -1,10 +1,15 @@
 import React from "react";
 import './Footer.css'; // Path to your CSS file
+import Logo from "../Image/Logo1.jpeg";
 
 function Footer() {
     return (
         <footer className="footer-container">
+            <div className="footer-logo">
+                <img src={Logo} alt="Logo" />
+            </div>
             <div className="footer-links">
+                {/* Add links if needed */}
             </div>
             <div className="footer-social">
                 <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">

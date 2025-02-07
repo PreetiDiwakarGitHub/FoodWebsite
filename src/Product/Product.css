@@ -34,7 +34,7 @@
 
 .product-card img {
     width: 80%;
-    height: 80%;
+    height: 100%;
     object-fit: cover; /* Ensures image fills the circle */
     border-radius: 50%; /* Round the image */
     transition: transform 0.3s ease;

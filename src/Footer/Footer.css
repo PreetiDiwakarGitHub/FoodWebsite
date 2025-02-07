@@ -1,77 +1,83 @@
-/* Footer.css */
-
+/* Footer Container Styling */
 .footer-container {
-    background-color: #4CAF50; /* Green color for health and freshness */
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #4CAF50;; /* Dark background color */
+    color: white;
     font-family: Arial, sans-serif;
+    flex-wrap: wrap; /* Allows items to stack on smaller screens */
 }
 
+/* Logo Styling */
+.footer-logo img {
+    height: 50px; /* Adjust the logo size */
+    width: auto;
+    margin-right: 20px;
+}
+
+/* Footer Links Section */
 .footer-links {
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex: 2; /* Takes up more space */
 }
 
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 16px;
-}
-
-.footer-links a:hover {
-    color: #ffa500; /* Orange color on hover */
-}
-
+/* Social Media Section */
 .footer-social {
-    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    flex: 2; /* Takes up more space */
+    justify-content: center;
 }
 
 .footer-social a {
-    color: #fff;
+    color: white;
     text-decoration: none;
-    margin: 0 10px;
-    font-size: 20px;
+    font-size: 18px;
+    transition: color 0.3s ease;
 }
 
 .footer-social a:hover {
-    color: #ffa500; /* Orange color on hover */
+    color: #f39c12; /* Accent color on hover */
 }
 
+/* Contact Information */
 .footer-contact {
-    margin-bottom: 20px;
+    text-align: center;
+    flex: 1; /* Takes up less space */
+}
+
+.footer-contact p {
+    font-size: 14px;
 }
 
 .footer-contact a {
-    color: #ffa500;
+    color: #f39c12; /* Highlight color for email */
     text-decoration: none;
 }
 
-.footer-contact a:hover {
-    text-decoration: underline;
-}
-
+/* Copyright Information */
 .footer-copy {
+    text-align: center;
     font-size: 14px;
-    color: #bbb;
+    flex: 1; /* Takes up less space */
 }
 
+/* Responsive Styling for Smaller Screens */
 @media (max-width: 768px) {
     .footer-container {
-        padding: 15px;
+        flex-direction: column; /* Stacks all content vertically */
+        align-items: center;
     }
 
-    .footer-links,
-    .footer-social,
-    .footer-contact {
-        margin-bottom: 15px;
+    .footer-links, .footer-social, .footer-contact, .footer-copy {
+        margin-bottom: 15px; /* Adds spacing between sections */
+        text-align: center; /* Centers text in smaller screen sizes */
     }
 
-    .footer-social a {
-        font-size: 18px;
-    }
-
-    .footer-contact p {
-        font-size: 14px;
+    .footer-container img {
+        margin-bottom: 15px; /* Adds space below the logo */
     }
 }

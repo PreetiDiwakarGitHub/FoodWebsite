@@ -1,60 +1,137 @@
-/* Container for the feedback form */
+/* Feedback Form Container */
 .feedback-container {
-    background-color: #fff;
-    padding: 20px;
-    margin: 30px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 25px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
 
+.feedback-container:hover {
+    transform: translateY(-5px);
+}
+
+/* Form Heading */
 .feedback-container h2 {
-    font-size: 24px;
+    font-size: 26px;
     color: #333;
+    font-weight: bold;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
+/* Form Structure */
 .feedback-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    font-size: 16px;
 }
 
+/* Labels */
 .feedback-form label {
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-weight: 600;
     text-align: left;
+    display: block;
+    font-size: 16px;
+    color: #555;
 }
 
+/* Input Fields (Including Name, Email, etc.) */
 .feedback-form input,
 .feedback-form select,
 .feedback-form textarea {
-    padding: 10px;
+    padding: 12px;
     font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
     width: 100%;
-    margin-bottom: 15px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+    background-color: #f8f9fa;  /* Light background for consistency */
 }
 
+/* Apply Same Style to Name Input */
+.feedback-form input[name="name"] {
+    /* Ensuring it matches other input fields */
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    width: 100%;
+    background-color: #f8f9fa;
+}
+
+/* Input Focus Effect */
+.feedback-form input:focus,
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
+    background: #ffffff;
+}
+
+/* Submit Button */
 .feedback-form button {
     background-color: #4CAF50;
     color: white;
-    padding: 10px;
-    font-size: 16px;
+    padding: 12px;
+    font-size: 18px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s ease-in-out;
 }
 
 .feedback-form button:hover {
     background-color: #45a049;
 }
 
+/* Thank You Message */
 .thank-you-message {
     font-size: 18px;
+    font-weight: bold;
     color: #4CAF50;
     margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Animation for Thank You Message */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feedback-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .feedback-container h2 {
+        font-size: 22px;
+    }
+
+    .feedback-form input,
+    .feedback-form select,
+    .feedback-form textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .feedback-form button {
+        font-size: 16px;
+        padding: 10px;
+    }
 }

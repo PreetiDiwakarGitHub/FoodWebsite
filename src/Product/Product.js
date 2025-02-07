@@ -2,7 +2,7 @@ import React from "react";
 import Breakfast from "../Image/Breakfast.webp";
 import Dinner from "../Image/Dinner.jpg";
 import Snacks from "../Image/Snacks.jpg";
-import Lunch from "../Image/lunch.jpg";
+import Lunch from "../Image/lunch.jpeg";
 import { Link, useNavigate } from "react-router-dom";
 import "./Product.css";
 

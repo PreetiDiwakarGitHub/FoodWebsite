@@ -8,6 +8,7 @@
     background-size: cover;
     background-position: center;
 }
+
 .Text {
     position: absolute;
     top: 50%;
@@ -18,56 +19,71 @@
     width: 80%;
     max-width: 600px;
 }
+
 .Text h1 {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
 }
+
 .Text h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: 500;
     color: #ff6600;
 }
+
 .Text p {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
     color: #333;
 }
+
 .Text-buttons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 15px;
 }
+
+/* Common button styling to ensure same size */
 .button1 {
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 12px 24px;  /* Uniform padding */
+    font-size: 1rem;  
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin: 5px;
     color: white;
     transition: all 0.3s ease;
+    min-width: 160px; /* Ensures all buttons have the same width */
+    text-align: center;
+    display: inline-block;
 }
+
+/* Specific button colors */
 .product-button {
     background-color: #4CAF50;
 }
 .product-button:hover {
     background-color: #2E7D32;
 }
+
 .learn-button {
     background-color: #FF9800;
 }
 .learn-button:hover {
     background-color: #F57C00;
 }
+
 .contact-button {
     background-color: #2196F3;
 }
 .contact-button:hover {
     background-color: #1976D2;
 }
+
+/* Responsive Design */
 @media only screen and (max-width: 600px) {
     .Text {
         width: 90%;
@@ -82,11 +98,12 @@
         flex-direction: column;
         align-items: center;
     }
-    .Text-buttons button {
-        width: 100%;
+    .button1 {
+        width: 100%; /* Ensures all buttons are same width on smaller screens */
         margin-bottom: 10px;
     }
 }
+
 @media only screen and (max-width: 768px) {
     .Text {
         width: 85%;
@@ -101,6 +118,7 @@
         height: 85vh;
     }
 }
+
 @media only screen and (min-width: 1024px) {
     .Main {
         height: 90vh;
