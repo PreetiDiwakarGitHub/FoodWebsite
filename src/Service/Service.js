@@ -10,8 +10,8 @@ function Service(){
                 <h1>Our Services</h1>
                 <div className="food_Text">
                     <div>
-                        <h1>Commitment to Hygiene and Quality</h1>
-                        <p>We ensure that every meal we prepare is delivered in a clean and proper manner, with hygiene as our top priority. From selecting fresh, high-quality ingredients to the careful preparation and packaging of each dish, we take every precaution to maintain the highest standards. Our commitment to cleanliness and safety ensures that the food you receive is free from contamination and prepared with utmost care.</p>
+                        <h1>Ensuring Freshness and Safety</h1>
+                        <p>We take pride in delivering meals that are not only delicious but also prepared with the highest standards of cleanliness and care. From sourcing fresh, high-quality ingredients to carefully cooking and packaging each dish, we follow strict hygiene protocols. Our dedication to food safety guarantees that every meal reaches you fresh, healthy, and free from contamination.</p>
                     </div>
                     <div>
                         <img src={service} />
@@ -22,15 +22,16 @@ function Service(){
                         <img src={service1} />
                     </div>
                     <div>
-                        <h1>Strict Hygiene Protocols</h1>
-                        <p>Our team adheres to strict hygiene protocols, including regular sanitization of our kitchens and workspaces to create a safe environment for food preparation. Each ingredient is sourced from trusted suppliers and thoroughly inspected for freshness and quality. To preserve the integrity of the food, we use food-grade packaging designed to maintain its flavor, texture, and temperature, ensuring your meal arrives in perfect condition.</p>
+                        <h1>Our Promise of Taste and Safety</h1>
+                        <p>We serve every meal with freshness, quality, and love. Our dishes are not only delicious but also prepared while maintaining the highest standards of hygiene and safety. Each dish is crafted to not only satisfy your hunger but also provide you with a memorable taste experience. We believe that good food brings joy, and we strive to make every bite a delightful one.</p>
                     </div>
                 </div>
                 <div className="food_Text">
 
                     <div>
-                        <h1>Dedicated to Customer Satisfaction</h1>
-                        <p>Beyond hygiene and quality, we are passionate about delivering a delightful experience to every customer. Our chefs are trained not only to create delicious dishes but also to cater to diverse tastes and dietary preferences. By continuously seeking feedback and striving for excellence, we ensure that every meal brings satisfaction and joy to your table. Your trust and happiness drive our commitment to go above and beyond in every aspect of our service.
+                        <h1>Focus on Cleanliness and Nutrition</h1>
+                        <p>
+                        From selecting fresh and pure ingredients to careful cooking and proper packaging, we ensure hygiene at every step. Every process in our kitchen is meticulously followed to maintain the quality of your food. Our goal is to serve you healthy, nutritious, and high-quality meals, ensuring that every bite is filled with freshness and flavor. We are committed to providing meals that are not only tasty but also rich in essential nutrients, making sure that you get the best balance of taste and health.
                         </p>
                     </div>
                     <div>

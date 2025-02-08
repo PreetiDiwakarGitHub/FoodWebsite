@@ -51,7 +51,7 @@ const Breakfast = () => {
               />
             </Link>
             <h3>{item.strMeal}</h3>
-            <p>$15.99</p> {/* Hardcoded price */}
+            <p className="">$15.99</p> {/* Hardcoded price */}
             <button className="order-button" onClick={() => handleOrderClick(item)}>
               Order
             </button>

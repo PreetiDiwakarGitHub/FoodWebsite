@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import './Lunch.css';
 
 const Lunch = () => {
   const [meal, setMeal] = useState("");
   const [mealsList, setMealsList] = useState([]);
   const [error, setError] = useState(null);
-  const [orderedMeals, setOrderedMeals] = useState([]);
   const navigate = useNavigate();
 
   // Function to fetch meals
@@ -37,9 +36,9 @@ const Lunch = () => {
     fetchMeals(meal);
   };
 
-  // Navigate to the OrderForm component when "Order Food" is clicked
+  // Navigate to OrderForm when "Order Food" is clicked
   const orderFood = (mealId, mealName) => {
-    navigate('/order-form', { state: { mealId, mealName } });
+    navigate('/orderform', { state: { mealId, mealName } }); // Navigate with state
   };
 
   return (
@@ -57,14 +56,16 @@ const Lunch = () => {
 
       <div className="meals-list">
         {mealsList.length > 0 ? (
-          mealsList.map((meal, index) => (
-            <div key={index} className="meal-item">
+          mealsList.map((meal) => (
+            <div key={meal.idMeal} className="meal-item">
               <img src={meal.strMealThumb} alt={meal.strMeal} />
+              <h3>{meal.strMeal}</h3>
               <p>₹{Math.floor(Math.random() * 100) + 50}</p> {/* Random Price */}
-              <button onClick={() => orderFood(meal.idMeal, meal.strMeal)}>Order Food</button>
-              {orderedMeals.includes(meal.idMeal) && (
-                <p>Food successfully ordered!</p>
-              )}
+              
+              {/* Click on Order Food to Open OrderForm */}
+              <button onClick={() => orderFood(meal.idMeal, meal.strMeal)}>
+                Order Food
+              </button>
             </div>
           ))
         ) : (

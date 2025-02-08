@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const Lunch = () => {
   const [meal, setMeal] = useState("");
   const [mealsList, setMealsList] = useState([]);
   const [error, setError] = useState(null);
-  const [orderedMeals, setOrderedMeals] = useState([]); // Track ordered meals by ID
+  const navigate = useNavigate();
 
-  // Function to fetch meals from the API
+  // Function to fetch meals
   const fetchMeals = async (searchTerm = "") => {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`;
-
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -27,25 +26,24 @@ const Lunch = () => {
     }
   };
 
-  // Fetch meals on component mount
+  // Fetch meals on mount
   useEffect(() => {
-    fetchMeals(); // Fetch a default list of meals
+    fetchMeals();
   }, []);
 
-  // Function to handle search action
+  // Search function
   const searchMeals = () => {
     fetchMeals(meal);
   };
 
-  // Function to handle food order for a specific meal
-  const orderFood = (mealId) => {
-    // Update the orderedMeals state to include the mealId of the ordered meal
-    setOrderedMeals((prevOrderedMeals) => [...prevOrderedMeals, mealId]);
+  // Navigate to OrderForm when "Order Food" is clicked
+  const orderFood = (mealId, mealName) => {
+    navigate('/orderform', { state: { mealId, mealName } }); // Navigate with state
   };
 
   return (
     <div className="meal-search-container">
-      <h1>Meal Search</h1>
+      <h1>Lunch Meals</h1>
       <input
         type="text"
         placeholder="Search for a meal"
@@ -56,32 +54,24 @@ const Lunch = () => {
 
       {error && <p className="error">{error}</p>}
 
-      {mealsList.length > 0 ? (
-        <div className="meals-list">
-          {mealsList.map((meal, index) => (
-            <div key={index} className="meal-item">
+      <div className="meals-list">
+        {mealsList.length > 0 ? (
+          mealsList.map((meal) => (
+            <div key={meal.idMeal} className="meal-item">
               <img src={meal.strMealThumb} alt={meal.strMeal} />
-
-              {/* Add price */}
-              <p>₹{Math.floor(Math.random() * 100) + 50}</p> {/* Placeholder for price */}
-
-              {/* Order button */}
-              <button
-                onClick={() => orderFood(meal.idMeal)} // Pass meal ID to orderFood
-              >
+              <h3>{meal.strMeal}</h3>
+              <p>₹{Math.floor(Math.random() * 100) + 50}</p> {/* Random Price */}
+              
+              {/* Click on Order Food to Open OrderForm */}
+              <button onClick={() => orderFood(meal.idMeal, meal.strMeal)}>
                 Order Food
               </button>
-
-              {/* Success message */}
-              {orderedMeals.includes(meal.idMeal) && (
-                <p>Food successfully ordered!</p>
-              )}
             </div>
-          ))}
-        </div>
-      ) : (
-        <p>No meals found</p>
-      )}
+          ))
+        ) : (
+          <p>No meals found</p>
+        )}
+      </div>
     </div>
   );
 };
